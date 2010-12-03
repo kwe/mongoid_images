@@ -1,0 +1,14 @@
+<h1>Listing assets</h1>
+
+<ul>
+  <% @assets.each do |asset| %>
+    <li>
+    <%= image_tag asset.file.thumb('400x200#').url %>
+    <%= asset.title %>
+    <%= link_to 'Show', asset %>
+    <%= link_to 'Destroy', asset, :confirm => 'Are you sure?', :method => :delete %></li>
+<% end %>
+</ul>
+<br />
+
+<%= link_to 'New Asset', new_asset_path %>
